@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class Structure {
     public List<Long> getPrimeList(String data) {
-        // data form: "1.2.3.4.5"
+        // data form: "1|2|3|4|5"
         List<String> elements = Arrays.asList(data.split("\\|"));
         List<Long> numbers = new ArrayList<Long>();
         for (String str : elements) numbers.add(Long.valueOf(str));
@@ -17,7 +17,7 @@ public class Structure {
         String result = numbers.stream()
                 .map(n -> String.valueOf(n))
                 .collect(Collectors.joining("|"));
-        // return: String type (ex. "1.2.3.4.5")
+        // return: String type (ex. "1|2|3|4|5")
         return result;
     }
 }
