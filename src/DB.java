@@ -7,7 +7,7 @@ public class DB {
     public List getPrimeNumbers(Long number) {
         BufferedReader bufferedReader = null;
         try {
-            List<Integer> list = new ArrayList<>();
+            List<Long> list = new ArrayList<>();
 
             bufferedReader = new BufferedReader(new FileReader("db.txt"));
             String line;
@@ -17,7 +17,7 @@ public class DB {
                 String[] items = line.split(" ");
                 if (items[0].equals(number.toString())) {
                     for (String item : items) {
-                        list.add(new Integer(item));
+                        list.add(new Long(item));
                     }
                     list.remove(0);
                 }
