@@ -4,7 +4,7 @@ public class DB {
     public List getPrimeNumbers(Long number) {
         return null;
     }
-    public boolean savePrimeNumber(Long number, List<Integer> primeNumbers) {
+    public boolean savePrimeNumber(Long number, List<Long> primeNumbers) {
         return true;
     }
 }

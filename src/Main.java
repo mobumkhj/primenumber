@@ -7,7 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("숫자를 입력하세요: ");
         long input = sc.nextInt();
-        List<Integer> output = null;
+        List<Long> output = null;
 
         DB l1 = new DB();
         output = l1.getPrimeNumbers(input);

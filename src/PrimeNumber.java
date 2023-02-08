@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeNumber {
-    public static long findPrimeNumber(long n) {
+    public long findPrimeNumber(long n) {
         if (n == 1) {
             return 0;
         }
@@ -14,7 +14,7 @@ public class PrimeNumber {
         return n;
     }
 
-    List<Integer> makePrimeNumber(long number) {
+    List<Long> makePrimeNumber(long number) {
         List primeNumbers = new ArrayList<Integer>();
 
         for (long i = 2; i <= number; i++) {
