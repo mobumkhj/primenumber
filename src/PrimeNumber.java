@@ -24,17 +24,48 @@ public class PrimeNumber {
     }
 
     public List<Long> makePrimeNumbers(long number, int order) {
-        List primeNumbers = new ArrayList<Integer>();
+        List primeNumbers = makePrimeNumbers1(number);
+
+        if (order == 1) {
+            Collections.reverse(primeNumbers);
+        }
+
+        return primeNumbers;
+
+    }
+
+    public List<Long> makePrimeNumbers1(long number) {
+        List primeNumbers = new ArrayList<Long>();
+        boolean prime[] = new boolean[(int) number + 1];
+
+        prime[0] = prime[1] = true;
+
+        for (int i = 2; i * i <= number; i++) {
+            // prime[i]가 소수라면
+            if (!prime[i]) {
+                // prime[j] 소수가 아닌 표시
+                for (int j = i * i; j <= number; j += i) prime[j] = true;
+            }
+        }
+
+        // 소수 출력
+        for (int i = 1; i <= number; i++) {
+            if (!prime[i]) primeNumbers.add((long)i);
+        }
+
+
+        return primeNumbers;
+
+    }
+
+    public List<Long> makePrimeNumbers2(long number) {
+        List primeNumbers = new ArrayList<Long>();
 
         for (long i = 2; i <= number; i++) {
             long prime = findPrimeNumber(i);
             if (prime != 0) {
                 primeNumbers.add(prime);
             }
-        }
-
-        if (order == 1) {
-            Collections.reverse(primeNumbers);
         }
 
         return primeNumbers;
