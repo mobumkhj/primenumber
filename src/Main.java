@@ -10,15 +10,22 @@ public class Main {
         List<Long> output = null;
 
         DB l1 = new DB();
-        output = l1.getPrimeNumbers(input);
+        String dbData = l1.getPrimeNumbers(input);
 
-        if(output == null){
+        Structure l2 = new Structure();
+
+        if(dbData == null){
             PrimeNumber l3 = new PrimeNumber();
             output = l3.makePrimeNumber(input);
+        }
+        else{
+            output = l2.getPrimeList(dbData);
         }
 
         System.out.println("소수: ");
         System.out.println(output);
-        l1.savePrimeNumber(input, output);
+
+        String dbSaveData = l2.getPrimeString(output);
+        l1.savePrimeNumber(dbSaveData);
     }
 }
