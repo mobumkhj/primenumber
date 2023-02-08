@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PrimeNumber {
@@ -22,7 +23,7 @@ public class PrimeNumber {
         return n;
     }
 
-    public List<Long> makePrimeNumbers(long number) {
+    public List<Long> makePrimeNumbers(long number, int order) {
         List primeNumbers = new ArrayList<Integer>();
 
         for (long i = 2; i <= number; i++) {
@@ -32,19 +33,24 @@ public class PrimeNumber {
             }
         }
 
+        if (order == 1) {
+            Collections.reverse(primeNumbers);
+        }
+
         return primeNumbers;
 
     }
 
-    public List<Long> getPrimeNumbers(long number) {
+    // 1 : backward
+    public List<Long> getPrimeNumbers(long number, int order) {
         List<Long> output = null;
         String data = db.getPrimeNumbers(number);
 
         if (data == null) {
-            output = makePrimeNumbers(number);
+            output = makePrimeNumbers(number, order);
             savePrimeNumbers(output);
         } else {
-            output = structure.getPrimeList(data);
+            output = structure.getPrimeList(data, order);
         }
 
         return output;
