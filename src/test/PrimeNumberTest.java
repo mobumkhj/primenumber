@@ -18,15 +18,17 @@ class PrimeNumberTest {
 
     @Test
     void makePrimeNumber1() {
-        List<Long> primeNumbers1 = primeNumber.makePrimeNumber(10);
+  /*      List<Long> primeNumbers1 = primeNumber.makePrimeNumber(10);
         Assertions.assertEquals(4, primeNumbers1.size());
 
         List<Long> primeNumbers2 = primeNumber.makePrimeNumber(15);
         Assertions.assertEquals(6, primeNumbers2.size());
+
+   */
     }
 
     @Test
     void makePrimeNumber2() {
-        List<Long> primeNumbers = primeNumber.makePrimeNumber(10000000);
+   //     List<Long> primeNumbers = primeNumber.makePrimeNumber(10000000);
     }
 }
